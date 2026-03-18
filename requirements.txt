@@ -4,3 +4,4 @@ sqlalchemy
 pg8000
 xgboost
 scikit-learn
+psycopg2
