@@ -1,0 +1,4 @@
+carteira_publica.db
+__pycache__/
+.venv/
+env/

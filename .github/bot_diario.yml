@@ -1,0 +1,31 @@
+name: Pipeline Diário da Carteira Pública
+
+on:
+  schedule:
+    # Roda de Segunda a Sexta (1-5) às 21:00 UTC (18:00 no Brasil, após o fechamento do pregão)
+    - cron: '0 21 * * 1-5'
+  workflow_dispatch: # Permite que você clique em um botão para rodar manualmente se quiser testar
+
+jobs:
+  rodar-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Baixar o código do repositório
+      uses: actions/checkout@v3
+
+    - name: Configurar o Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10' # Versão estável
+
+    - name: Instalar bibliotecas
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Rodar o Pipeline Diário (Ingestão + Previsão)
+      env:
+        # Puxa a senha do banco de forma segura
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+      run: python pipeline_diario.py
