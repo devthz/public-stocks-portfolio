@@ -28,4 +28,4 @@ jobs:
       env:
         # Puxa a senha do banco de forma segura
         SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-      run: python pipeline_diario.py
+      run: python pipeline.py
