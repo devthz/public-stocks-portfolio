@@ -33,8 +33,9 @@ Este projeto foi construído usando tecnologias modernas de Engenharia de Dados 
 
 2.Instale as dependências:
     ```pip install -r requirements.txt```
-
+   
 3. Configure os Secrets: Crie uma pasta .streamlit com um arquivo secrets.toml contendo suas credenciais do GCP e a SUPABASE_URL.
+
 
 4. Inicie o dashboard:
   ```streamlit run app.py```
