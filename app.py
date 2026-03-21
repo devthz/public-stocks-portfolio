@@ -254,7 +254,7 @@ def carregar_dados_planilha():
 
 @st.cache_data(ttl=3600)
 def carregar_previsoes_ml():
-    DATABASE_URL = "postgresql+pg8000://postgres:HSzSSkKY3*x/y?a@db.xktuqowufoynwtujbbur.supabase.co:5432/finance_ml"
+    DATABASE_URL = st.secrets["DATABASE_URL"]
     engine = sa.create_engine(DATABASE_URL)
     query = """
         SELECT REPLACE(ticker_id, '.SA', '') AS ticker_id, probabilidade_compra, recomendacao 
