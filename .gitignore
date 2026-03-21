@@ -2,3 +2,7 @@ carteira_publica.db
 __pycache__/
 .venv/
 env/
+nifty-seat-489913-j5-0fcae274f9b9.json
+prod.py
+acoes_v2.py
+features_engineering_v2.py
